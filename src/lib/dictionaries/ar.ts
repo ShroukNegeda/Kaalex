@@ -7,6 +7,10 @@ const ar: Dictionary = {
     services: "خدماتنا",
     portfolio: "أعمالنا",
     startProject: "ابدأ مشروعك",
+    search: "بحث",
+    searchPlaceholder: "ابحث داخل الموقع",
+    searchNoResults: "لا توجد نتائج",
+    closeSearch: "إغلاق البحث",
   },
   footer: {
     tagline:

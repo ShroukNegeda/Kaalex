@@ -4,6 +4,8 @@ import { useLanguage } from "@/context/language-context";
 import { ArrowRight } from "lucide-react";
 import clsx from "clsx";
 
+const KAALEX_FAKE_EMAIL = "hello@kaalexstudio.com";
+
 export function ContactForm({
   className,
   id,
@@ -14,10 +16,40 @@ export function ContactForm({
   const { t } = useLanguage();
   const f = t.home.form;
 
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+    const fullName = String(formData.get("fullName") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const need = String(formData.get("need") ?? "").trim();
+    const budget = String(formData.get("budget") ?? "").trim();
+    const details = String(formData.get("details") ?? "").trim();
+
+    const subject = encodeURIComponent(
+      fullName ? `New project inquiry from ${fullName}` : "New project inquiry"
+    );
+
+    const body = encodeURIComponent(
+      [
+        "Full name: " + (fullName || "-"),
+        "Email: " + (email || "-"),
+        "I need: " + (need || "-"),
+        "Budget range: " + (budget || "-"),
+        "",
+        "Project details:",
+        details || "-",
+      ].join("\n")
+    );
+
+    window.location.href = `mailto:${KAALEX_FAKE_EMAIL}?subject=${subject}&body=${body}`;
+  };
+
   return (
     <form
       id={id}
-      onSubmit={(e) => e.preventDefault()}
+      onSubmit={handleSubmit}
       className={clsx(
         "w-full scroll-mt-24 rounded-2xl border border-border bg-surface p-6 sm:p-7",
         className
@@ -27,11 +59,11 @@ export function ContactForm({
       <p className="mt-1.5 text-sm text-text-muted">{f.desc}</p>
 
       <div className="mt-6 space-y-4">
-        <Field label={f.fullName} name="fullName" />
-        <Field label={f.email} name="email" type="email" />
+        <Field label={f.fullName} name="fullName" required />
+        <Field label={f.email} name="email" type="email" required />
         <div className="grid grid-cols-2 gap-4">
-          <Field label={f.need} name="need" />
-          <Field label={f.budget} name="budget" />
+          <Field label={f.need} name="need" required />
+          <Field label={f.budget} name="budget" required />
         </div>
         <div>
           <label className="mb-1.5 block text-xs font-medium text-text-muted">
@@ -40,6 +72,7 @@ export function ContactForm({
           <textarea
             name="details"
             rows={4}
+            required
             className="w-full resize-none rounded-lg border border-border bg-bg-elevated px-3.5 py-2.5 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
           />
         </div>
@@ -61,10 +94,12 @@ function Field({
   label,
   name,
   type = "text",
+  required = false,
 }: {
   label: string;
   name: string;
   type?: string;
+  required?: boolean;
 }) {
   return (
     <div>
@@ -74,6 +109,7 @@ function Field({
       <input
         type={type}
         name={name}
+        required={required}
         className="w-full rounded-lg border border-border bg-bg-elevated px-3.5 py-2.5 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none"
       />
     </div>

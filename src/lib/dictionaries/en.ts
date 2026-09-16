@@ -5,6 +5,10 @@ const en = {
     services: "Services",
     portfolio: "Portfolio",
     startProject: "Start a Project",
+    search: "Search",
+    searchPlaceholder: "Search the site",
+    searchNoResults: "No results found",
+    closeSearch: "Close search",
   },
   footer: {
     tagline:

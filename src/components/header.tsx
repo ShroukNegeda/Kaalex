@@ -17,7 +17,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const projectHref = pathname === "/" ? "#start-project" : "/#start-project";
+  const projectHref = "/contact";
 
   const searchableItems = useMemo(
     () => [
@@ -82,18 +82,7 @@ export function Header() {
     setSearchQuery("");
   };
 
-  const handleProjectClick = () => {
-    setOpen(false);
-
-    if (pathname === "/") {
-      requestAnimationFrame(() => {
-        document.getElementById("start-project")?.scrollIntoView({
-          behavior: "smooth",
-          block: "start",
-        });
-      });
-    }
-  };
+  const handleProjectClick = () => setOpen(false);
 
   const handleLogoClick = () => {
     setOpen(false);

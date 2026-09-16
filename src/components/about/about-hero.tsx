@@ -44,7 +44,7 @@ export function AboutHero() {
           className="mt-14 flex items-center gap-2 text-sm font-medium text-text-faint transition-colors hover:text-text"
         >
           {a.explore}
-          <ArrowDown size={14} />
+          <ArrowDown size={14} className="text-accent" />
         </a>
       </div>
     </section>

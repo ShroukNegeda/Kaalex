@@ -8,13 +8,6 @@ export function NotSureCta() {
   const { t } = useLanguage();
   const c = t.home.notSure;
 
-  const handleStartProject = () => {
-    document.getElementById("start-project")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-  };
-
   return (
     <section className="border-b border-border bg-bg py-6">
       <div className="container-page">
@@ -26,8 +19,7 @@ export function NotSureCta() {
             <p className="mt-2 max-w-md text-sm text-text-muted">{c.desc}</p>
           </div>
           <Button
-            href="#start-project"
-            onClick={handleStartProject}
+            href="/contact"
             size="lg"
             icon={<ArrowRight size={16} />}
             className="shrink-0"

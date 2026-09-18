@@ -42,16 +42,18 @@ const cairo = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "KAALEX — Technology & Digital Growth",
+  title:
+    "KAALEX | Digital Product Agency & Growth Solutions | KAALEX | تطوير مواقع وتطبيقات وتصميم واجهات المستخدم",
   description:
-    "KAALEX combines technology, design, and digital growth to build scalable solutions — end to end, under one team.",
+    "KAALEX turns ideas into scalable digital products. Web & app development, UI/UX design, and digital marketing—all under one roof. Get a free consultation! | تجمع KAALEX بين التكنولوجيا والتصميم والنمو الرقمي لبناء حلول برمجية ومواقع وتطبيقات قابلة للتوسع. احصل على استشارة مجانية اليوم!",
   alternates: {
     canonical: "/",
   },
   openGraph: {
-    title: "KAALEX — Technology & Digital Growth",
+    title:
+      "KAALEX | Digital Product Agency & Growth Solutions | KAALEX | تطوير مواقع وتطبيقات وتصميم واجهات المستخدم",
     description:
-      "KAALEX combines technology, design, and digital growth to build scalable solutions — end to end, under one team.",
+      "KAALEX turns ideas into scalable digital products. Web & app development, UI/UX design, and digital marketing—all under one roof. Get a free consultation! | تجمع KAALEX بين التكنولوجيا والتصميم والنمو الرقمي لبناء حلول برمجية ومواقع وتطبيقات قابلة للتوسع. احصل على استشارة مجانية اليوم!",
     url: siteUrl,
     siteName: "KAALEX",
     type: "website",

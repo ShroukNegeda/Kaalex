@@ -1,7 +1,27 @@
+import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/home/hero";
 import { ServicesShowcase } from "@/components/home/services-showcase";
 import en from "@/lib/dictionaries/en";
+
+export const metadata: Metadata = {
+  title:
+    "KAALEX | Digital Product Agency & Growth Solutions | KAALEX | تطوير مواقع وتطبيقات وتصميم واجهات المستخدم",
+  description:
+    "KAALEX turns ideas into scalable digital products. Web & app development, UI/UX design, and digital marketing—all under one roof. Get a free consultation! | تجمع KAALEX بين التكنولوجيا والتصميم والنمو الرقمي لبناء حلول برمجية ومواقع وتطبيقات قابلة للتوسع. احصل على استشارة مجانية اليوم!",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title:
+      "KAALEX | Digital Product Agency & Growth Solutions | KAALEX | تطوير مواقع وتطبيقات وتصميم واجهات المستخدم",
+    description:
+      "KAALEX turns ideas into scalable digital products. Web & app development, UI/UX design, and digital marketing—all under one roof. Get a free consultation! | تجمع KAALEX بين التكنولوجيا والتصميم والنمو الرقمي لبناء حلول برمجية ومواقع وتطبيقات قابلة للتوسع. احصل على استشارة مجانية اليوم!",
+    url: "https://kaalexstudio.com",
+    siteName: "KAALEX",
+    type: "website",
+  },
+};
 
 const NotSureCta = dynamic(
   () => import("@/components/home/not-sure-cta").then((mod) => mod.NotSureCta),

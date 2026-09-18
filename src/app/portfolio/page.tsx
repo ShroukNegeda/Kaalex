@@ -1,14 +1,15 @@
-"use client";
-
-import { useLanguage } from "@/context/language-context";
-import { EmptyPage } from "@/components/shared/empty-page";
+import { PortfolioHero } from "@/components/portfolio/portfolio-hero";
+import { PortfolioShowcaseIntro } from "@/components/portfolio/portfolio-showcase-intro";
+import { PortfolioWork } from "@/components/portfolio/portfolio-work";
+import { FinalCta } from "@/components/home/final-cta";
 
 export default function PortfolioPage() {
-  const { t } = useLanguage();
   return (
-    <EmptyPage
-      title={t.placeholder.portfolio.title}
-      desc={t.placeholder.portfolio.desc}
-    />
+    <>
+      <PortfolioHero />
+      <PortfolioShowcaseIntro />
+      <PortfolioWork />
+      <FinalCta />
+    </>
   );
 }

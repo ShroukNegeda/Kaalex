@@ -6,6 +6,8 @@ const ar: Dictionary = {
     about: "من نحن",
     services: "خدماتنا",
     portfolio: "أعمالنا",
+    blog: "المقالات",
+    contact: "تواصل معنا",
     startProject: "ابدأ مشروعك",
     search: "بحث",
     searchPlaceholder: "ابحث داخل الموقع",

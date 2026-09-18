@@ -46,8 +46,18 @@ export function Header() {
         label: t.nav.portfolio,
         keywords: ["portfolio", "work", "projects", "showcase", "case study"],
       },
+      {
+        href: "/blog",
+        label: t.nav.blog,
+        keywords: ["blog", "articles", "insights", "news", "content"],
+      },
+      {
+        href: "/contact",
+        label: t.nav.contact,
+        keywords: ["contact", "reach us", "get in touch", "start project", "message"],
+      },
     ],
-    [t.nav.about, t.nav.home, t.nav.portfolio, t.nav.services]
+    [t.nav.about, t.nav.blog, t.nav.contact, t.nav.home, t.nav.portfolio, t.nav.services]
   );
 
   const filteredItems = useMemo(() => {
@@ -99,6 +109,8 @@ export function Header() {
     { href: "/about", label: t.nav.about },
     { href: "/services", label: t.nav.services },
     { href: "/portfolio", label: t.nav.portfolio },
+    { href: "/blog", label: t.nav.blog },
+    { href: "/contact", label: t.nav.contact },
   ];
 
   return (

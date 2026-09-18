@@ -4,6 +4,8 @@ const en = {
     about: "About",
     services: "Services",
     portfolio: "Portfolio",
+    blog: "Blog",
+    contact: "Contact",
     startProject: "Start a Project",
     search: "Search",
     searchPlaceholder: "Search the site",

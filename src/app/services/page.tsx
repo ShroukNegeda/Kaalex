@@ -1,30 +1,25 @@
-import type { Metadata } from "next";
-import { EmptyPage } from "@/components/shared/empty-page";
-
-export const metadata: Metadata = {
-  title:
-    "Custom Software, Design & Digital Growth Services | KAALEX | حلول البرمجة والتصميم والنمو الرقمي — KAALEX",
-  description:
-    "Explore KAALEX services: web & app development, UI/UX design, and digital growth strategies tailored to scale your business. Get a free consultation! | استكشف خدمات KAALEX: تطوير المواقع والتطبيقات، تصميم واجهات المستخدم، واستراتيجيات النمو الرقمي المصممة لتوسيع أعمالك. احصل على استشارة مجانية!",
-  alternates: {
-    canonical: "/services",
-  },
-  openGraph: {
-    title:
-      "Custom Software, Design & Digital Growth Services | KAALEX | حلول البرمجة والتصميم والنمو الرقمي — KAALEX",
-    description:
-      "Explore KAALEX services: web & app development, UI/UX design, and digital growth strategies tailored to scale your business. Get a free consultation! | استكشف خدمات KAALEX: تطوير المواقع والتطبيقات، تصميم واجهات المستخدم، واستراتيجيات النمو الرقمي المصممة لتوسيع أعمالك. احصل على استشارة مجانية!",
-    url: "https://kaalexstudio.com/services",
-    siteName: "KAALEX",
-    type: "website",
-  },
-};
+import { ServicesHero } from "@/components/services/services-hero";
+import { ServicesCapabilities } from "@/components/services/services-capabilities";
+import { ServicesGoalGuide } from "@/components/services/services-goal-guide";
+import { Process } from "@/components/home/process";
+import { Positioning } from "@/components/about/positioning";
+import { VisionMission } from "@/components/about/vision-mission";
+import { Partner } from "@/components/home/partner";
+import { Faq } from "@/components/home/faq";
+import { FinalCta } from "@/components/home/final-cta";
 
 export default function ServicesPage() {
   return (
-    <EmptyPage
-      title="Services"
-      desc="Custom software, design, and digital growth solutions built to help your business scale."
-    />
+    <>
+      <ServicesHero />
+      <ServicesCapabilities />
+      <ServicesGoalGuide />
+      <Process />
+      <Positioning />
+      <VisionMission />
+      <Partner />
+      <Faq />
+      <FinalCta />
+    </>
   );
 }

@@ -1,5 +1,6 @@
 "use client";
 
+import { useId } from "react";
 import { useLanguage } from "@/context/language-context";
 import { ArrowRight } from "lucide-react";
 import clsx from "clsx";
@@ -17,6 +18,7 @@ export function ContactForm({
 }) {
   const { t } = useLanguage();
   const f = t.home.form;
+  const detailsId = useId();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -68,7 +70,7 @@ export function ContactForm({
         className
       )}
     >
-      <h3 className="font-display text-lg font-semibold text-text">{f.title}</h3>
+      <p className="font-display text-lg font-semibold text-text">{f.title}</p>
       <p className="mt-1.5 text-sm text-text-muted">{f.desc}</p>
 
       <div className="mt-6 space-y-4">
@@ -79,10 +81,11 @@ export function ContactForm({
           <Field label={f.budget} name="budget" required />
         </div>
         <div>
-          <label className="mb-1.5 block text-xs font-medium text-text-muted">
+          <label htmlFor={detailsId} className="mb-1.5 block text-xs font-medium text-text-muted">
             {f.details}
           </label>
           <textarea
+            id={detailsId}
             name="details"
             rows={4}
             required
@@ -114,6 +117,8 @@ function ProjectForm({
   form: typeof import("@/lib/dictionaries/en").default.home.form;
   onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 }) {
+  const detailsId = useId();
+
   return (
     <form
       id={id}
@@ -157,8 +162,8 @@ function ProjectForm({
             <Field label={form.budget} name="budget" placeholder="Select your Budget range" />
           </div>
           <div className="mt-3">
-            <label className="mb-1.5 block text-[11px] font-medium text-text-muted">{form.details}</label>
-            <textarea name="details" rows={5} required placeholder="........" className="w-full resize-none rounded-xl border border-border bg-surface px-3 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none" />
+            <label htmlFor={detailsId} className="mb-1.5 block text-[11px] font-medium text-text-muted">{form.details}</label>
+            <textarea id={detailsId} name="details" rows={5} required placeholder="........" className="w-full resize-none rounded-xl border border-border bg-surface px-3 py-3 text-sm text-text placeholder:text-text-faint focus:border-accent focus:outline-none" />
           </div>
         </div>
       </div>
@@ -185,12 +190,15 @@ function Field({
   required?: boolean;
   placeholder?: string;
 }) {
+  const fieldId = useId();
+
   return (
     <div>
-      <label className="mb-1.5 block text-xs font-medium text-text-muted">
+      <label htmlFor={fieldId} className="mb-1.5 block text-xs font-medium text-text-muted">
         {label}
       </label>
       <input
+        id={fieldId}
         type={type}
         name={name}
         required={required}

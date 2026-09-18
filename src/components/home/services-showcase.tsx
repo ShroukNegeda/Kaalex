@@ -15,7 +15,13 @@ import { useLanguage } from "@/context/language-context";
 import { SectionHeading } from "../shared/section-heading";
 
 const icons = [Globe, Smartphone, Palette, BarChart3, Megaphone];
-const photoIds = [0, 48, 96, 119, 20];
+const serviceImages = [
+  "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1200&q=80&fm=webp",
+  "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=1200&q=80&fm=webp",
+  "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80&fm=webp",
+  "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80&fm=webp",
+  "https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80&fm=webp",
+];
 
 export function ServicesShowcase() {
   const { t, dir } = useLanguage();
@@ -43,12 +49,15 @@ export function ServicesShowcase() {
                 )}
               >
                 <Image
-                  src={`https://picsum.photos/id/${photoIds[i]}/900/700`}
+                  src={serviceImages[i]}
                   alt={service.name}
+                  title={service.name}
                   fill
-                  unoptimized
                   className="object-cover"
                   sizes="(min-width: 1024px) 40vw, 100vw"
+                  quality={65}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div
                   className={clsx(

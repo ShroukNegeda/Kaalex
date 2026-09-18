@@ -21,9 +21,9 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-display text-sm font-semibold text-text">
+          <h2 className="font-display text-sm font-semibold text-text">
             {t.footer.navigate}
-          </h4>
+          </h2>
           <ul className="mt-4 space-y-3 text-sm text-text-muted">
             <li><Link href="/about" className="hover:text-text">{t.nav.about}</Link></li>
             <li><Link href="/portfolio" className="hover:text-text">{t.nav.portfolio}</Link></li>
@@ -32,9 +32,9 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-display text-sm font-semibold text-text">
+          <h2 className="font-display text-sm font-semibold text-text">
             {t.footer.services}
-          </h4>
+          </h2>
           <ul className="mt-4 space-y-3 text-sm text-text-muted">
             {t.footer.services_list.map((service, i) => (
               <li key={service}>
@@ -47,9 +47,9 @@ export function Footer() {
         </div>
 
         <div>
-          <h4 className="font-display text-sm font-semibold text-text">
+          <h2 className="font-display text-sm font-semibold text-text">
             {t.footer.contact}
-          </h4>
+          </h2>
           <ul className="mt-4 space-y-3 text-sm">
             <li><a href="https://wa.me/201271705556" target="_blank" rel="noreferrer" className="text-accent hover:opacity-80">WhatsApp</a></li>
             <li><a href="https://www.facebook.com/Kaalextech" target="_blank" rel="noreferrer" className="text-accent hover:opacity-80">Facebook</a></li>

@@ -10,7 +10,7 @@
   --border: #e2e2df;
   --text: #101010;
   --text-muted: #55564f;
-  --text-faint: #8a8b83;
+  --text-faint: #666760;
   --accent: #9fd400;
   --accent-2: #7ab000;
   --accent-contrast: #0a0a0a;
@@ -42,8 +42,8 @@
   --color-accent: var(--accent);
   --color-accent-2: var(--accent-2);
   --color-accent-contrast: var(--accent-contrast);
-  --font-display: "Space Grotesk", "Cairo", sans-serif;
-  --font-body: "Inter", "Cairo", sans-serif;
+  --font-display: var(--font-space-grotesk), var(--font-cairo), sans-serif;
+  --font-body: var(--font-inter), var(--font-cairo), sans-serif;
 }
 
 * {
@@ -76,14 +76,14 @@ body {
 }
 
 [dir="rtl"] body {
-  font-family: "Cairo", var(--font-body);
+  font-family: var(--font-cairo), var(--font-body);
 }
 
 [dir="rtl"] h1,
 [dir="rtl"] h2,
 [dir="rtl"] h3,
 [dir="rtl"] .font-display {
-  font-family: "Cairo", var(--font-display);
+  font-family: var(--font-cairo), var(--font-display);
 }
 
 ::selection {

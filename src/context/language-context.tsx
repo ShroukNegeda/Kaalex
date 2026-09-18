@@ -2,6 +2,7 @@
 
 import {
   createContext,
+  startTransition,
   useContext,
   useEffect,
   useMemo,
@@ -34,7 +35,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const stored = window.localStorage.getItem(STORAGE_KEY) as Locale | null;
     if (stored === "en" || stored === "ar") {
-      setLocaleState(stored);
+      startTransition(() => setLocaleState(stored));
     }
   }, []);
 

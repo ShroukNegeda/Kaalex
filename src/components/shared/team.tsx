@@ -1,6 +1,11 @@
 import Image from "next/image";
 
-const avatarSeeds = [47, 68, 45, 65, 33, 12, 25, 8];
+const teamImages = [
+  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80&fm=webp",
+  "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80&fm=webp",
+  "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=800&q=80&fm=webp",
+  "https://images.unsplash.com/photo-1504593811423-6dd665756598?auto=format&fit=crop&w=800&q=80&fm=webp",
+];
 
 export function Team({
   title,
@@ -21,12 +26,15 @@ export function Team({
             <div key={member.name} className="text-center">
               <div className="relative mx-auto aspect-square w-full max-w-[220px] overflow-hidden rounded-2xl bg-surface-2">
                 <Image
-                  src={`https://i.pravatar.cc/440?img=${avatarSeeds[i % avatarSeeds.length]}`}
+                  src={teamImages[i % teamImages.length]}
                   alt={member.name}
+                  title={member.name}
                   fill
-                  unoptimized
                   className="object-cover grayscale-[15%]"
                   sizes="220px"
+                  quality={65}
+                  loading="lazy"
+                  decoding="async"
                 />
               </div>
               <h3 className="mt-4 font-display text-base font-semibold text-text">
